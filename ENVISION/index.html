@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="CVPR Project Page Description">
+  <meta name="description" content="ENVISION:Embodied Visual Planning via Goal-Imagery Video Diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your CVPR Project Title</title>
+  <title>ENVISION:Embodied Visual Planning via Goal-Imagery Video Diffusion</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -19,6 +19,7 @@
       line-height: 1.5;
       margin: 0;
     }
+    
 
     h1, h2, h3 {
       font-family: 'Google Sans', sans-serif;
@@ -108,7 +109,26 @@
     .publication-authors { font-size: 1.2rem; text-align: center; margin-bottom: 1rem; }
     .publication-authors sup { font-size: 0.8rem; top: -0.5em; }
     .publication-venue { font-size: 1.1rem; font-weight: bold; text-align: center; margin-bottom: 1rem; color: #666; }
-    .author-block { display: inline-block; margin-right: 10px; }
+    /* .author-block { display: inline-block; margin-right: 10px; } */
+    .author-block a {
+      color: #3273dc; /* 经典的学术蓝 */
+      text-decoration: none; /* 去掉下划线 */
+      transition: color 0.3s ease;
+    }
+
+    .author-block a:hover {
+      color: #363636; /* 鼠标悬停变成深灰色 */
+      text-decoration: underline; /* 鼠标悬停显示下划线 */
+    }
+    /* 之前的 Flexbox 居中代码保持不变 */
+    .publication-authors {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+        }
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -150,18 +170,18 @@
     <h1 class="publication-title">ENVISION:Embodied Visual Planning via Goal-Imagery Video Diffusion</h1>  
     
     <div class="publication-authors">
-      <span class="author-block">Yuming Gu<sup>1</sup>,</span>
-      <span class="author-block">Yizhi Wang*<sup>5</sup>,</span>
-      <span class="author-block">Yining Hong*<sup>2</sup>,</span>
-      <span class="author-block">Yipeng Gao*<sup>1</sup>,</span>
-      <span class="author-block">Hao Jiang<sup>1</sup>,</span>
-      <span class="author-block">Angtian Wang<sup>5</sup>,</span>
-      <span class="author-block">Bo Liu<sup>5</sup>,</span>
-      <span class="author-block">Nathaniel S. Dennler<sup>3</sup>,</span>
-      <span class="author-block">Zhengfei Kuang<sup>2</sup>,</span>
-      <span class="author-block">Hao Li<sup>4</sup>,</span>
-      <span class="author-block">Gordon Wetzstein<sup>2</sup>,</span>
-      <span class="author-block">Chongyang Ma<sup>5</sup></span>
+      <span class="author-block"><a href="https://freedomgu.github.io/" target="_blank">Yuming Gu</a><sup>1</sup>,</span>
+      <span class="author-block"><a href="https://actasidiot.github.io/" target="_blank">Yizhi Wang*</a><sup>5</sup>,</span>
+      <span class="author-block"><a href="https://evelinehong.github.io/" target="_blank">Yining Hong*</a><sup>2</sup>,</span>
+      <span class="author-block"><a href="https://scholar.google.com/citations?user=m8I1ELMAAAAJ&hl=zh-CN" target="_blank">Yipeng Gao*</a><sup>1</sup>,</span>
+      <span class="author-block"><a href="https://scholar.google.com/citations?user=qEEdTEwAAAAJ&hl=en" target="_blank">Hao Jiang</a><sup>1</sup>,</span>
+      <span class="author-block"><a href="https://angtianwang.github.io/" target="_blank">Angtian Wang</a><sup>5</sup>,</span>
+      <span class="author-block"><a href="https://www.linkedin.com/in/bo-liu-09680458/" target="_blank">Bo Liu</a><sup>5</sup>,</span>
+      <span class="author-block"><a href="https://ndennler.github.io/" target="_blank">Nathaniel S. Dennler</a><sup>3</sup>,</span>
+      <span class="author-block"><a href="https://zhengfeikuang.com/" target="_blank">Zhengfei Kuang</a><sup>2</sup>,</span>
+      <span class="author-block"><a href="https://www.hao-li.com/Hao_Li/Hao_Li_-_about_me.html" target="_blank">Hao Li</a><sup>4</sup>,</span>
+      <span class="author-block"><a href="https://stanford.edu/~gordonwz/" target="_blank">Gordon Wetzstein</a><sup>2</sup>,</span>
+      <span class="author-block"><a href="http://www.chongyangma.com/" target="_blank">Chongyang Ma</a><sup>5</sup></span>
     </div>
 <br>
     <div class="publication-authors">
@@ -280,15 +300,15 @@
       <div class="carousel-track" id="track-4">
         <div class="carousel-card">
            <video autoplay muted loop playsinline><source src="./env/goal_image_generation/apple.mp4" type="video/mp4"></video>
-           <p>Unitree Go1</p>
+           <p>Move the front apple from left to the right, human hand.</p>
         </div>
         <div class="carousel-card">
            <video autoplay muted loop playsinline><source src="./env/goal_image_generation/paint_can.mp4" type="video/mp4"></video>
-           <p>Unitree Go1</p>
+           <p>Move the paint bucket from left to the right, human hand.</p>
         </div>
         <div class="carousel-card">
           <video autoplay muted loop playsinline><source src="./env/goal_image_generation/sausage.mp4" type="video/mp4"></video>
-          <p>Unitree Go1</p>
+          <p>Pick up the corn and put it on the right side of sausages, google robot.</p>
        </div>
       </div>
       <button class="carousel-btn next" onclick="scrollCarousel('track-4', 300)"><i class="fas fa-chevron-right"></i></button>
@@ -300,11 +320,11 @@
       <div class="carousel-track" id="track-2">
         <div class="carousel-card">
            <video autoplay muted loop playsinline><source src="./env/cross_embodiment/concatenated_video_horizontal.mp4" type="video/mp4"></video>
-           <p>Unitree Go1</p>
+           <p>Move the red Chinese chess forward on the board</p>
         </div>
         <div class="carousel-card">
            <video autoplay muted loop playsinline><source src="./env/cross_embodiment/side_by_side_024_005.mp4" type="video/mp4"></video>
-           <p>Unitree Go1</p>
+           <p>Pick up the wine bottle and place it on the right side of the table</p>
         </div>
       </div>
       <button class="carousel-btn next" onclick="scrollCarousel('track-2', 300)"><i class="fas fa-chevron-right"></i></button>
@@ -316,11 +336,11 @@
         <div class="carousel-track" id="track-3">
           <div class="carousel-card">
              <video autoplay muted loop playsinline><source src="./env/robot_execution/block-stack-ours-deploy.mp4" type="video/mp4"></video>
-             <p>Franka Panda</p>
+             <p>Sort the blue cube on the top of the red cube.</p>
           </div>
           <div class="carousel-card">
              <video autoplay muted loop playsinline><source src="./env/robot_execution/place-apple-Tesseract.mp4" type="video/mp4"></video>
-             <p>Unitree Go1</p>
+             <p>Place the apple on the bucket.</p>
           </div>
         </div>
         <button class="carousel-btn next" onclick="scrollCarousel('track-3', 300)"><i class="fas fa-chevron-right"></i></button>
@@ -331,7 +351,7 @@
     <p>We observe failures in cases of extreme occlusion.</p>
             <div class="carousel-card">
                 <video autoplay muted loop playsinline><source src="./env/failure.mp4" type="video/mp4"></video>
-                <p>Failure: Occlusion</p>
+                <p>Failure: Hang the tool in multi stages.</p>
             </div>
 
   </section>
@@ -340,11 +360,7 @@
 
   <section class="section">
     <h2>BibTeX</h2>
-    <pre><code>@inproceedings{yourname2024project,
-  title={Your Project Title: A Short Descriptive Subtitle},
-  author={One, Author and Two, Author and Three, Author},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2024}
+    <pre><code>@N/A{\\
 }</code></pre>
   </section>
 
