@@ -1,124 +1,368 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CVPR Project Page Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your CVPR Project Title</title>
 
-<!-- saved from url=(0044)https://freedomgu.github.io/DiffPortrait360/ -->
-<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<meta content="ENVISION:Embodied Visual Planning via Goal-Imagery Video Diffusion" name="description"/>
-<meta content="Embodied Visual Planning, Video Generation, Image Editing" name="keywords"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>ENVISION: Embodied Visual Planning via Goal-Imagery Video Diffusion</title>
-<link href="./env/bulma.min.css" rel="stylesheet"/>
-<link href="./env/bulma-carousel.min.css" rel="stylesheet"/>
-<link href="./env/bulma-slider.min.css" rel="stylesheet"/>
-<link href="./env/fontawesome.all.min.css" rel="stylesheet"/>
-<link href="./env/academicons.min.css" rel="stylesheet"/>
-<link href="./env/index.css" rel="stylesheet"/>
-<style>
-  .colorful-title span:nth-child(1) { color: #E74C3C; } /* E - 红色 */
-  .colorful-title span:nth-child(2) { color: #E67E22; } /* N - 橙色 */
-  .colorful-title span:nth-child(3) { color: #F39C12; } /* V - 黄色 */
-  .colorful-title span:nth-child(4) { color: #27AE60; } /* I - 绿色 */
-  .colorful-title span:nth-child(5) { color: #3498DB; } /* S - 蓝色 */
-  .colorful-title span:nth-child(6) { color: #9B59B6; } /* I - 紫色 */
-  .colorful-title span:nth-child(7) { color: #E91E63; } /* O - 粉色 */
-  .colorful-title span:nth-child(8) { color: #1ABC9C; } /* N - 青色 */
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  /* 白色背景 */
-  .hero.is-light {
-    background-color: white !important;
-  }
+  <style>
+    /* --- General Styles --- */
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #ffffff;
+      color: #4a4a4a;
+      line-height: 1.5;
+      margin: 0;
+    }
 
-  /* 增加页面宽度 */
-  .container {
-    max-width: 1400px !important;
-  }
+    h1, h2, h3 {
+      font-family: 'Google Sans', sans-serif;
+      color: #363636;
+      text-align: center;
+    }
 
-  .hero-body .container {
-    max-width: 1200px !important;
-  }
-</style>
-<script src="./env/jquery.min.js"></script>
-<script src="./env/jquery(1).min.js"></script>
-<script defer="" src="./env/fontawesome.all.min.js"></script>
-<script src="./env/bulma-carousel.min.js"></script>
-<script src="./env/bulma-slider.min.js"></script>
-<script src="./env/index.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-</head><body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1141.0"><input data-inspect-config="3" id="_w_simile" type="hidden"/><script src="chrome-extension://dbjbempljhcmhlfpfacalomonjpalpko/scripts/inspector.js" type="text/javascript"></script>
-<nav aria-label="main navigation" class="navbar" role="navigation">
-<div class="navbar-brand">
-<a aria-expanded="false" aria-label="menu" class="navbar-burger" role="button">
-<span aria-hidden="true"></span>
-<span aria-hidden="true"></span>
-<span aria-hidden="true"></span>
-</a>
-</div>
-</nav>
+    h1 { font-size: 2.5rem; margin-top: 1.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; }
 
-<section class="hero is-light">
-<div class="hero-body">
-<div class="container has-text-centered">
-<h1 class="title is-1"><strong class="colorful-title"><span>E</span><span>N</span><span>V</span><span>I</span><span>S</span><span>I</span><span>O</span><span>N</span></strong><br/>
-<span style="font-size:0.8em;">Embodied Visual Planning via Goal-Imagery Video Diffusion</span>
-</h1>
-<div class="is-size-5 has-text-centered" style="line-height: 1.6;">
+    .container {
+      max-width: 800px; /* 稍微调窄一点，单栏显示时更好看 */
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-  <p>
-    <a>Yuming Gu</a><sup>1</sup>,
-    <a>Yizhi Wang</a><sup>2</sup>,
-    <a>Yining Hong</a><sup>3</sup>,
-    <a>Yipeng Gao</a><sup>1</sup>
-  </p>
+    /* --- Buttons & Links --- */
+    .link-block { text-align: center; margin-bottom: 2rem; }
+    .external-link {
+      background-color: #363636;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 24px;
+      margin: 0 5px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .external-link:hover { background-color: #555; }
+    .icon { margin-right: 5px; display: inline-flex; }
 
-  <p>
-    <a>Hao Jiang</a><sup>1</sup>,
-    <a>Angtian Wang</a><sup>2</sup>,
-    <a>Bo Liu</a><sup>2</sup>,
-    <a>Nathaniel S. Dennler</a><sup>4</sup>
-  </p>
+    .section { margin-bottom: 3rem; }
+    .abstract-text { background: #f5f5f5; padding: 20px; border-radius: 10px; text-align: justify;}
+    
+    img, video { max-width: 100%; border-radius: 5px; display: block; margin: 0 auto; }
+    .caption { text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px; }
+    .divider { border-top: 1px solid #ddd; margin: 3rem 0; }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .result-item { text-align: center; }
 
-  <p>
-    <a>Zhengfei Kuang</a><sup>3</sup>,
-    <a>Hao Li</a><sup>5</sup>,
-    <a>Gordon Wetzstein</a><sup>3</sup>,
-    <a>Chongyang Ma</a><sup>2</sup>
-  </p>
+    /* --- 核心修改：Carousel 样式 --- */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      margin: 0 auto; /* 居中 */
+      overflow: hidden;
+    }
 
-</div>
-<div class="is-size-6" style="margin-top: 10px;">
-<p>
-<sup>1</sup>USC  
-          <sup>2</sup>ByteDance   
-          <sup>3</sup>Stanford   
-          <sup>4</sup>MIT   
-          <sup>5</sup>MBZUAI
-        </p>
-</div>
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0; /* 单栏模式一般不需要 gap，或者很小 */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
 
+    .carousel-track::-webkit-scrollbar { display: none; }
 
-<div class="buttons is-centered" style="margin-top: 22px;">
-<a class="button is-dark is-rounded" href="#">📄 Paper (Coming Soon)</a>
-<a class="button is-link is-rounded" href="#">💻 Code (Coming Soon)</a>
-<a class="button is-info is-rounded" href="#">📦 Dataset (Coming Soon)</a>
-<a class="button is-primary is-rounded" href="#">🌐 Project Page</a>
-</div>
-</div>
-</div>
-</section>
+    .carousel-card {
+      /* === 修改点 1: 设置为 100% === */
+      flex: 0 0 100%; 
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-<section class="section">
+    .carousel-card video {
+      width: 100%; 
+      /* 如果不想视频太高，可以限制 max-height, e.g. 500px */
+    }
+
+    .carousel-card p {
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      text-align: center;
+      background: #f9f9f9;
+      font-weight: bold;
+    }
+
+    .publication-title { font-weight: bold; }
+    .publication-authors { font-size: 1.2rem; text-align: center; margin-bottom: 1rem; }
+    .publication-authors sup { font-size: 0.8rem; top: -0.5em; }
+    .publication-venue { font-size: 1.1rem; font-weight: bold; text-align: center; margin-bottom: 1rem; color: #666; }
+    .author-block { display: inline-block; margin-right: 10px; }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.2rem;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-btn:hover { background: rgba(0, 0, 0, 0.8); }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    /* Bibtex */
+    pre {
+      background-color: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
 <div class="container">
-<h2 class="title is-3 has-text-centered">Demo Video</h2>
-<div class="columns is-centered">
-<div class="column is-8">
-<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-<video controls autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-<source src="./env/demos/demo.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
-</div>
-</div>
-</div>
-</section>
 
-</body></html>
+  <header class="section">
+    <h1 class="publication-title">ENVISION:Embodied Visual Planning via Goal-Imagery Video Diffusion</h1>  
+    
+    <div class="publication-authors">
+      <span class="author-block">Yuming Gu<sup>1</sup>,</span>
+      <span class="author-block">Yizhi Wang*<sup>5</sup>,</span>
+      <span class="author-block">Yining Hong*<sup>2</sup>,</span>
+      <span class="author-block">Yipeng Gao*<sup>1</sup>,</span>
+      <span class="author-block">Hao Jiang<sup>1</sup>,</span>
+      <span class="author-block">Angtian Wang<sup>5</sup>,</span>
+      <span class="author-block">Bo Liu<sup>5</sup>,</span>
+      <span class="author-block">Nathaniel S. Dennler<sup>3</sup>,</span>
+      <span class="author-block">Zhengfei Kuang<sup>2</sup>,</span>
+      <span class="author-block">Hao Li<sup>4</sup>,</span>
+      <span class="author-block">Gordon Wetzstein<sup>2</sup>,</span>
+      <span class="author-block">Chongyang Ma<sup>5</sup></span>
+    </div>
+<br>
+    <div class="publication-authors">
+      <span class="author-block"><sup>1</sup>USC</span>
+      <span class="author-block"><sup>2</sup>Stanford</span>
+      <span class="author-block"><sup>3</sup>MIT</span>
+      <span class="author-block"><sup>4</sup>MBZUAI</span>
+      <span class="author-block"><sup>5</sup>Bytedance Intelligence Creation</span>
+    </div>
+<br>
+    <!-- <div class="publication-venue">
+      CVPR
+    </div> -->
+
+    <div class="link-block">
+      <a href="#" class="external-link">
+        <span class="icon"><i class="ai ai-arxiv"></i></span>
+        <span>arXiv</span>
+      </a>
+      <a href="#" class="external-link">
+        <span class="icon"><i class="fab fa-github"></i></span>
+        <span>Code</span>
+      </a>
+      <a href="#" class="external-link">
+        <span class="icon"><i class="fab fa-youtube"></i></span>
+        <span>Video</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="teaser">
+      <video autoplay muted loop playsinline width="100%">
+        <source src="./env/demos/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Abstract</h2>
+    <div class="abstract-text">
+      <p>
+        Embodied visual planning guides manipulation by imagining how a scene evolves toward a goal, yet existing video diffusion models remain purely forward-predictive, causing drift and goal misalignment. We introduce Envision, which explicitly constrains generation with a goal image to ensure physical plausibility and goal consistency. Envision operates in two stages: a Goal Imagery Model produces a coherent, task-relevant goal image, and a first-and-last-frame-conditioned video diffusion model interpolates between the start and goal states. Across manipulation and editing benchmarks, Envision achieves superior goal alignment, spatial consistency, and object preservation, providing reliable visual plans for downstream robotic control.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Method Pipeline</h2>
+    <img src="./env/pipeline.png" alt="Method Pipeline">
+    <div class="caption">
+      <strong>Figure 1:</strong> Overview of our proposed pipeline. We process the input observation and goal image to generate consistent video plans.
+    </div>
+  </section>
+  
+  <div class="divider"></div>
+
+  <section class="section">
+    <h2>Experimental Results</h2>
+
+    <h3>Comparison to Previous Works</h3>
+    <p style="text-align:center; color:#666;">
+      Visual comparison against Baselines on the Taste-Rob and RT-1 datasets.
+    </p>
+
+    <div class="carousel-container" id="carousel-1">
+      <button class="carousel-btn prev" onclick="scrollCarousel('track-1', -300)"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-track" id="track-1">
+        
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/Comparison_Video/4078_combined.mp4" type="video/mp4"></video>
+           <p>Take the green glasses from the open drawer and put them on the desk top, human hand</p>
+        </div>
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/Comparison_Video/2022_combined.mp4" type="video/mp4"></video>
+           <p>Move the blue and white eraser next to the calendar in English, human hand</p>
+        </div>
+
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/Comparison_Video/079_combined.mp4" type="video/mp4"></video>
+           <p>Move sponge near blue chip bag, google robot</p>
+        </div>
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/Comparison_Video/087_combined.mp4" type="video/mp4"></video>
+           <p>Move rxbar blueberry near green jalapeno chip bag, google robot</p>
+        </div>
+        <div class="carousel-card">
+          <video autoplay muted loop playsinline><source src="./env/Comparison_Video/105_combined.mp4" type="video/mp4"></video>
+          <p>Move pepsi can near rxbar chocolate, google robot</p>
+       </div>
+       <div class="carousel-card">
+        <video autoplay muted loop playsinline><source src="./env/Comparison_Video/003_combined.mp4" type="video/mp4"></video>
+        <p>Pick banana from white bowl, google robot</p>
+     </div>
+     <div class="carousel-card">
+      <video autoplay muted loop playsinline><source src="./env/Comparison_Video/2031_combined.mp4" type="video/mp4"></video>
+      <p>Move the blue-white eraser next to the pink mug, human hand</p>
+   </div>
+   <div class="carousel-card">
+    <video autoplay muted loop playsinline><source src="./env/Comparison_Video/060_combined.mp4" type="video/mp4"></video>
+    <p>Place blue plastic bottle into middle drawer, google robot</p>
+ </div>
+ <div class="carousel-card">
+  <video autoplay muted loop playsinline><source src="./env/Comparison_Video/2132_combined.mp4" type="video/mp4"></video>
+  <p>Move the green scissors next to the pink calculato, human hand</p>
+</div>
+
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel('track-1', 300)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <h3>Ablation on Goal-Image Generation</h3>
+    <div class="carousel-container" id="carousel-2">
+      <button class="carousel-btn prev" onclick="scrollCarousel('track-4', -300)"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-track" id="track-4">
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/goal_image_generation/apple.mp4" type="video/mp4"></video>
+           <p>Unitree Go1</p>
+        </div>
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/goal_image_generation/paint_can.mp4" type="video/mp4"></video>
+           <p>Unitree Go1</p>
+        </div>
+        <div class="carousel-card">
+          <video autoplay muted loop playsinline><source src="./env/goal_image_generation/sausage.mp4" type="video/mp4"></video>
+          <p>Unitree Go1</p>
+       </div>
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel('track-4', 300)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <h3>Cross Embodiment Video Generation</h3>
+    
+    <div class="carousel-container" id="carousel-2">
+      <button class="carousel-btn prev" onclick="scrollCarousel('track-2', -300)"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-track" id="track-2">
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/cross_embodiment/concatenated_video_horizontal.mp4" type="video/mp4"></video>
+           <p>Unitree Go1</p>
+        </div>
+        <div class="carousel-card">
+           <video autoplay muted loop playsinline><source src="./env/cross_embodiment/side_by_side_024_005.mp4" type="video/mp4"></video>
+           <p>Unitree Go1</p>
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel('track-2', 300)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <h3>Comparison to Previous Works on Robot Execution</h3>
+    <div class="carousel-container" id="carousel-2">
+        <button class="carousel-btn prev" onclick="scrollCarousel('track-3', -300)"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-track" id="track-3">
+          <div class="carousel-card">
+             <video autoplay muted loop playsinline><source src="./env/robot_execution/block-stack-ours-deploy.mp4" type="video/mp4"></video>
+             <p>Franka Panda</p>
+          </div>
+          <div class="carousel-card">
+             <video autoplay muted loop playsinline><source src="./env/robot_execution/place-apple-Tesseract.mp4" type="video/mp4"></video>
+             <p>Unitree Go1</p>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="scrollCarousel('track-3', 300)"><i class="fas fa-chevron-right"></i></button>
+      </div>  
+    <br><br>
+
+    <h3>Failure Cases</h3>
+    <p>We observe failures in cases of extreme occlusion.</p>
+            <div class="carousel-card">
+                <video autoplay muted loop playsinline><source src="./env/failure.mp4" type="video/mp4"></video>
+                <p>Failure: Occlusion</p>
+            </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section">
+    <h2>BibTeX</h2>
+    <pre><code>@inproceedings{yourname2024project,
+  title={Your Project Title: A Short Descriptive Subtitle},
+  author={One, Author and Two, Author and Three, Author},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}</code></pre>
+  </section>
+
+  <footer class="section" style="text-align: center; font-size: 0.8rem; color: #888;">
+    <p>This website template is adapted from Nerfies.</p>
+  </footer>
+
+</div>
+
+<script>
+  function scrollCarousel(trackId, scrollAmount) {
+    const track = document.getElementById(trackId);
+    track.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</body>
+</html>
